@@ -255,7 +255,7 @@ export class Dependencies {
 
   private installCli(callback: () => void): void {
     this.logger.debug('Downloading wakatime-cli...');
-    let url = 'https://github.com/wakatime/wakatime/archive/master.zip';
+    let url = 'https://github.com/syns2191/wakatime/archive/master.zip';
     let zipFile = path.join(this.extensionPath, 'wakatime-master.zip');
 
     this.downloadFile(url, zipFile, () => {

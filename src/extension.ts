@@ -79,6 +79,7 @@ export function activate(ctx: vscode.ExtensionContext) {
       logger.debug('::WakaTime debug mode::');
     }
     options.getSetting('settings', 'standalone', (_err, standalone) => {
+      console.log('xxxxxxxx', standalone)
       wakatime.initialize(standalone !== 'false');
     });
   });

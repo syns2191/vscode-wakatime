@@ -265,7 +265,8 @@ export class Dependencies {
 
   private installStandaloneCli(callback: () => void): void {
     this.logger.debug('Downloading wakatime-cli standalone...');
-    const url = this.s3BucketUrl() + 'wakatime-cli.zip';
+    const url = this.s3BucketUrl();
+    console.log('xxx', url);
     let zipFile = path.join(this.extensionPath, 'wakatime-cli.zip');
     this.downloadFile(url, zipFile, () => {
       this.extractStandaloneCli(zipFile, () => {
@@ -416,9 +417,10 @@ export class Dependencies {
   }
 
   private s3BucketUrl(): string {
+    console.log('create url');
     switch (os.platform()) {
       case 'darwin':
-        return this.s3urlprefix + 'mac-x86-64/';
+        return 'https://uc22dcd1eef6af2e7cdb667dceac.dl.dropboxusercontent.com/cd/0/get/A9C7J0drvTqb7Vmo4-5Rt5g8yrt6DpTAKhVXPY60BMUz3uoRugzEwd0JFsVOCiEMKdRPHQ6FToP9kFM3IDWa2K4X8IFzddN1BJKNFMXyiZ2hzDDdIhqGpoeDwJJ4pIDm_GQ/file#';
       case 'win32':
         return this.s3urlprefix + 'windows-x86-' + this.architecture() + '/';
       default:

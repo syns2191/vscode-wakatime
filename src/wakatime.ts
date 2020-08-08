@@ -322,6 +322,7 @@ export class WakaTime {
       }
     });
     process.on('close', (code, _signal) => {
+      console.log('jhgdkgndjng', code);
       if (code == 0) {
         if (this.showStatusBar) {
           if (!this.showCodingActivity) this.statusBar.text = '$(clock)';

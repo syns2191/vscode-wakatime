@@ -417,10 +417,9 @@ export class Dependencies {
   }
 
   private s3BucketUrl(): string {
-    console.log('create url');
     switch (os.platform()) {
       case 'darwin':
-        return 'https://uc22dcd1eef6af2e7cdb667dceac.dl.dropboxusercontent.com/cd/0/get/A9C7J0drvTqb7Vmo4-5Rt5g8yrt6DpTAKhVXPY60BMUz3uoRugzEwd0JFsVOCiEMKdRPHQ6FToP9kFM3IDWa2K4X8IFzddN1BJKNFMXyiZ2hzDDdIhqGpoeDwJJ4pIDm_GQ/file#';
+        return 'https://dl.dropboxusercontent.com/s/ocp1m4ntqh4bw2g/wakatime-cli.zip?dl=0';
       case 'win32':
         return this.s3urlprefix + 'windows-x86-' + this.architecture() + '/';
       default:
